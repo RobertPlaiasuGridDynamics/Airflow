@@ -1,7 +1,6 @@
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
-from airflow.operators.python import PythonOperator
-
+from airflow.operators.python import PythonOperator, BranchPythonOperator, ShortCircuitOperator
 from resources import *
 
 with DAG(
@@ -15,11 +14,22 @@ with DAG(
         op_kwargs={"dag_id": "dag_id_2", "database": "airflow"},
         dag=dag
     )
-    task2 = EmptyOperator(
-        task_id="insert_new_row"
+    task2 = BranchPythonOperator(
+        task_id="check_if_table_exists",
+        python_callable=branch_condition,
+        dag=dag
     )
     task3 = EmptyOperator(
-        task_id="query_table"
+        task_id="create_table",
+        dag=dag
     )
-    task1 >> task2 >> task3
-
+    task4 = EmptyOperator(
+        task_id="insert_new_row",
+        dag=dag
+    )
+    task5 = EmptyOperator(
+        task_id="query_table",
+        dag=dag
+    )
+    task1 >> task2 >> task3 >> task4 >> task5
+    task2 >> task4 >> task5

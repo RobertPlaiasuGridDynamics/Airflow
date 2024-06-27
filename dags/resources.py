@@ -1,4 +1,5 @@
 import logging
+import random
 from datetime import datetime
 
 config = {
@@ -17,3 +18,11 @@ config = {
 def log_context(ds=None, **kwargs):
     logger = logging.getLogger(__name__)
     logger.info(f"{kwargs["dag_id"]} start processing tables in database:{kwargs["database"]}")
+
+
+def branch_condition():
+    a = random.randint(1, 2)
+    if a > 1:
+        return "create_table"
+    else:
+        return None
