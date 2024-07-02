@@ -25,11 +25,14 @@ with DAG(
     )
     task4 = EmptyOperator(
         task_id="insert_new_row",
+        trigger_rule='none_failed',
         dag=dag
     )
     task5 = EmptyOperator(
         task_id="query_table",
         dag=dag
     )
-    task1 >> task2 >> task3 >> task4 >> task5
-    task2 >> task4 >> task5
+    task1 >> task2
+    task2 >> task3
+    task2 >> task4
+    task4 >> task5

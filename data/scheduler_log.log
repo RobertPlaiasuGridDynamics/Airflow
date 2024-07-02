@@ -1,0 +1,57 @@
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[[34m2024-06-28T14:52:08.120+0300[0m] {[34mtask_context_logger.py:[0m63} INFO[0m - Task context logging is enabled[0m
+[[34m2024-06-28T14:52:08.120+0300[0m] {[34mexecutor_loader.py:[0m235} INFO[0m - Loaded executor: SequentialExecutor[0m
+[[34m2024-06-28T14:52:08.155+0300[0m] {[34mscheduler_job_runner.py:[0m796} INFO[0m - Starting the scheduler[0m
+[[34m2024-06-28T14:52:08.155+0300[0m] {[34mscheduler_job_runner.py:[0m803} INFO[0m - Processing each file at most -1 times[0m
+[[34m2024-06-28T14:52:08.158+0300[0m] {[34mmanager.py:[0m170} INFO[0m - Launched DagFileProcessorManager with pid: 1541[0m
+[[34m2024-06-28T14:52:08.159+0300[0m] {[34mscheduler_job_runner.py:[0m1595} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2024-06-28T14:52:08.166+0300[0m] {[34mscheduler_job_runner.py:[0m1618} INFO[0m - Marked 1 SchedulerJob instances as failed[0m
+[[34m2024-06-28T14:52:08.170+0300[0m] {[34mscheduler_job_runner.py:[0m1654} INFO[0m - Reset the following 1 orphaned TaskInstances:
+	<TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-12T00:00:00+00:00 [running]>[0m
+[[34m2024-06-28T14:52:08.840+0300[0m] {[34msettings.py:[0m60} INFO[0m - Configured default timezone UTC[0m
+[2024-06-28T14:52:08.847+0300] {manager.py:393} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[[34m2024-06-28T14:52:09.712+0300[0m] {[34mdag.py:[0m3954} INFO[0m - Setting next_dagrun for trigger_dag to 2024-01-14 00:00:00+00:00, run_after=2024-01-15 00:00:00+00:00[0m
+[[34m2024-06-28T14:52:09.728+0300[0m] {[34mdagrun.py:[0m819} ERROR[0m - Marking run <DagRun trigger_dag @ 2024-01-10 00:00:00+00:00: scheduled__2024-01-10T00:00:00+00:00, state:running, queued_at: 2024-06-28 11:43:16.784289+00:00. externally triggered: False> failed[0m
+[[34m2024-06-28T14:52:09.729+0300[0m] {[34mdagrun.py:[0m901} INFO[0m - DagRun Finished: dag_id=trigger_dag, execution_date=2024-01-10 00:00:00+00:00, run_id=scheduled__2024-01-10T00:00:00+00:00, run_start_date=2024-06-28 11:43:16.789923+00:00, run_end_date=2024-06-28 11:52:09.729069+00:00, run_duration=532.939146, state=failed, external_trigger=False, run_type=scheduled, data_interval_start=2024-01-10 00:00:00+00:00, data_interval_end=2024-01-11 00:00:00+00:00, dag_hash=4f577ab6f8d7c8eecdef0165da00dcc7[0m
+[[34m2024-06-28T14:52:09.731+0300[0m] {[34mdag.py:[0m3954} INFO[0m - Setting next_dagrun for trigger_dag to 2024-01-11 00:00:00+00:00, run_after=2024-01-12 00:00:00+00:00[0m
+[[34m2024-06-28T14:52:09.731+0300[0m] {[34mdagrun.py:[0m819} ERROR[0m - Marking run <DagRun trigger_dag @ 2024-01-09 00:00:00+00:00: scheduled__2024-01-09T00:00:00+00:00, state:running, queued_at: 2024-06-28 11:43:11.934928+00:00. externally triggered: False> failed[0m
+[[34m2024-06-28T14:52:09.731+0300[0m] {[34mdagrun.py:[0m901} INFO[0m - DagRun Finished: dag_id=trigger_dag, execution_date=2024-01-09 00:00:00+00:00, run_id=scheduled__2024-01-09T00:00:00+00:00, run_start_date=2024-06-28 11:43:11.944159+00:00, run_end_date=2024-06-28 11:52:09.731897+00:00, run_duration=537.787738, state=failed, external_trigger=False, run_type=scheduled, data_interval_start=2024-01-09 00:00:00+00:00, data_interval_end=2024-01-10 00:00:00+00:00, dag_hash=4f577ab6f8d7c8eecdef0165da00dcc7[0m
+[[34m2024-06-28T14:52:09.732+0300[0m] {[34mdag.py:[0m3954} INFO[0m - Setting next_dagrun for trigger_dag to 2024-01-10 00:00:00+00:00, run_after=2024-01-11 00:00:00+00:00[0m
+[[34m2024-06-28T14:52:09.739+0300[0m] {[34mscheduler_job_runner.py:[0m417} INFO[0m - 2 tasks up for execution:
+	<TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-12T00:00:00+00:00 [scheduled]>
+	<TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-13T00:00:00+00:00 [scheduled]>[0m
+[[34m2024-06-28T14:52:09.739+0300[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG trigger_dag has 0/16 running and queued tasks[0m
+[[34m2024-06-28T14:52:09.739+0300[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG trigger_dag has 1/16 running and queued tasks[0m
+[[34m2024-06-28T14:52:09.739+0300[0m] {[34mscheduler_job_runner.py:[0m596} INFO[0m - Setting the following tasks to queued state:
+	<TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-12T00:00:00+00:00 [scheduled]>
+	<TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-13T00:00:00+00:00 [scheduled]>[0m
+[[34m2024-06-28T14:52:09.740+0300[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='trigger_dag', task_id='wait_for_run_file', run_id='scheduled__2024-01-12T00:00:00+00:00', try_number=2, map_index=-1) to executor with priority 3 and queue default[0m
+[[34m2024-06-28T14:52:09.740+0300[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'trigger_dag', 'wait_for_run_file', 'scheduled__2024-01-12T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/trigger_dag.py'][0m
+[[34m2024-06-28T14:52:09.740+0300[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='trigger_dag', task_id='wait_for_run_file', run_id='scheduled__2024-01-13T00:00:00+00:00', try_number=1, map_index=-1) to executor with priority 3 and queue default[0m
+[[34m2024-06-28T14:52:09.740+0300[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'trigger_dag', 'wait_for_run_file', 'scheduled__2024-01-13T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/trigger_dag.py'][0m
+[[34m2024-06-28T14:52:09.741+0300[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'trigger_dag', 'wait_for_run_file', 'scheduled__2024-01-12T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/trigger_dag.py'][0m
+[[34m2024-06-28T14:52:10.273+0300[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/rplaiasu/PycharmProjects/DagCreation/dags/trigger_dag.py[0m
+[[34m2024-06-28T14:52:10.305+0300[0m] {[34mexample_local_kubernetes_executor.py:[0m40} WARNING[0m - Could not import DAGs in example_local_kubernetes_executor.py[0m
+Traceback (most recent call last):
+  File "/Users/rplaiasu/PycharmProjects/DagCreation/.venv/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[[34m2024-06-28T14:52:10.306+0300[0m] {[34mexample_local_kubernetes_executor.py:[0m41} WARNING[0m - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes][0m
+[[34m2024-06-28T14:52:10.417+0300[0m] {[34mexample_kubernetes_executor.py:[0m39} WARNING[0m - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes][0m
+[[34m2024-06-28T14:52:10.491+0300[0m] {[34mworkday.py:[0m41} WARNING[0m - Could not import pandas. Holidays will not be considered.[0m
+[[34m2024-06-28T14:52:10.508+0300[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-12T00:00:00+00:00 [queued]> on host C13547[0m
+[[34m2024-06-28T14:52:20.864+0300[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'trigger_dag', 'wait_for_run_file', 'scheduled__2024-01-13T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/trigger_dag.py'][0m
+[[34m2024-06-28T14:52:21.384+0300[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/rplaiasu/PycharmProjects/DagCreation/dags/trigger_dag.py[0m
+[[34m2024-06-28T14:52:21.413+0300[0m] {[34mexample_local_kubernetes_executor.py:[0m40} WARNING[0m - Could not import DAGs in example_local_kubernetes_executor.py[0m
+Traceback (most recent call last):
+  File "/Users/rplaiasu/PycharmProjects/DagCreation/.venv/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[[34m2024-06-28T14:52:21.413+0300[0m] {[34mexample_local_kubernetes_executor.py:[0m41} WARNING[0m - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes][0m
+[[34m2024-06-28T14:52:21.499+0300[0m] {[34mexample_kubernetes_executor.py:[0m39} WARNING[0m - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes][0m
+[[34m2024-06-28T14:52:21.566+0300[0m] {[34mworkday.py:[0m41} WARNING[0m - Could not import pandas. Holidays will not be considered.[0m
+[[34m2024-06-28T14:52:21.581+0300[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: trigger_dag.wait_for_run_file scheduled__2024-01-13T00:00:00+00:00 [queued]> on host C13547[0m

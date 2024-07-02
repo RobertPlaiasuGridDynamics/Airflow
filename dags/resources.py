@@ -22,7 +22,7 @@ def log_context(ds=None, **kwargs):
 
 def branch_condition():
     a = random.randint(1, 2)
-    if a > 1:
+    if a == 1:
         return "create_table"
     else:
-        return None
+        return "insert_new_row"
