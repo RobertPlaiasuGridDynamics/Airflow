@@ -1,7 +1,13 @@
 from airflow import DAG
+from airflow.operators.bash import BashOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator, BranchPythonOperator, ShortCircuitOperator
 from resources import *
+
+
+def push_xcom(ti):
+    ti.xcom_push(key="log", value=f"{ti.run_id} ended")
+
 
 with DAG(
         dag_id="dag_id_3",
@@ -28,10 +34,13 @@ with DAG(
         trigger_rule='none_failed',
         dag=dag
     )
-    task5 = EmptyOperator(
+    task5 = PythonOperator(
         task_id="query_table",
+        python_callable=push_xcom,
+        provide_context=True,
         dag=dag
     )
+
 
     task1 >> task2
     task2 >> task3
