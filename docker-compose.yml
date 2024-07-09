@@ -9,3 +9,4 @@ services:
       - POSTGRES_PASSWORD=secret
       - POSTGRES_USER=user
       - POSTGRES_DB=airflow
+      - POSTGRES_HOST_AUTH_METHOD=trust
