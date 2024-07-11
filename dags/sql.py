@@ -4,11 +4,11 @@ import uuid
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.empty import EmptyOperator
-from airflow.operators.python import PythonOperator, BranchPythonOperator, ShortCircuitOperator
+from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
-from airflow.providers.postgres.operators.postgres import PostgresOperator
 
+from PostgreSQLCountRows import PostgreSQLCountRows
 from resources import *
 
 
@@ -81,10 +81,9 @@ with DAG(
         parameters=(uuid.uuid4().int % 123456789, uuid.uuid4().hex[:10], datetime.now()),
         dag=dag
     )
-    task7 = PythonOperator(
+    task7 = PostgreSQLCountRows(
         task_id="query_table",
-        python_callable=number_of_rows,
-        provide_context=True,
+        table_name="table_name",
         dag=dag
     )
 
