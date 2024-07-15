@@ -10,3 +10,16 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_DB=airflow
       - POSTGRES_HOST_AUTH_METHOD=trust
+
+  vault:
+    image: vault:1.13.3
+    environment:
+      - VAULT_ADDR=http://127.0.0.1:8200
+      - VAULT_API_ADDR=http://127.0.0.1:8200
+      - VAULT_ADDRESS=http://127.0.0.1:8200
+      - VAULT_DEV_ROOT_TOKEN_ID=ZyrP7NtNw0hbLUqu7N3IlTdO
+    expose:
+      - 8200
+    ports:
+      - 8200:8200
+    command: server -dev
