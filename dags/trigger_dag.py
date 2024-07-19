@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
@@ -20,6 +21,7 @@ def get_most_recent_dag_run(dt):
 
 
 path = Variable.get("path")
+path = os.getenv('DATA_FOLDER') + path
 
 
 def print_log(**context):
@@ -59,7 +61,7 @@ with DAG(
         )
         t4 = BashOperator(
             task_id="add_timestamp_file",
-            bash_command="touch /Users/rplaiasu/PycharmProjects/DagCreation/data/finished_#{{ ts_nodash }}",
+            bash_command="touch " + os.getenv('DATA_FOLDER') + "/finished_#{{ ts_nodash }}",
             dag=dag
         )
 
