@@ -1,0 +1,19 @@
+[2024-07-18T08:01:02.811+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-18T08:01:02.831+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: trigger_dag.trigger_dag_id_3 manual__2024-07-18T08:00:59.817398+00:00 [queued]>
+[2024-07-18T08:01:02.835+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: trigger_dag.trigger_dag_id_3 manual__2024-07-18T08:00:59.817398+00:00 [queued]>
+[2024-07-18T08:01:02.836+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-07-18T08:01:02.842+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): trigger_dag_id_3> on 2024-07-18 08:00:59.817398+00:00
+[2024-07-18T08:01:02.845+0000] {warnings.py:112} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=134) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-07-18T08:01:02.846+0000] {standard_task_runner.py:63} INFO - Started process 136 to run task
+[2024-07-18T08:01:02.846+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'trigger_dag', 'trigger_dag_id_3', 'manual__2024-07-18T08:00:59.817398+00:00', '--job-id', '1560', '--raw', '--subdir', 'DAGS_FOLDER/trigger_dag.py', '--cfg-path', '/tmp/tmpbhzeyp1s']
+[2024-07-18T08:01:02.848+0000] {standard_task_runner.py:91} INFO - Job 1560: Subtask trigger_dag_id_3
+[2024-07-18T08:01:02.882+0000] {task_command.py:426} INFO - Running <TaskInstance: trigger_dag.trigger_dag_id_3 manual__2024-07-18T08:00:59.817398+00:00 [running]> on host 4d13026947d2
+[2024-07-18T08:01:02.943+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='trigger_dag' AIRFLOW_CTX_TASK_ID='trigger_dag_id_3' AIRFLOW_CTX_EXECUTION_DATE='2024-07-18T08:00:59.817398+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-18T08:00:59.817398+00:00'
+[2024-07-18T08:01:02.945+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-18T08:01:03.008+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-18T08:01:03.016+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=trigger_dag, task_id=trigger_dag_id_3, run_id=manual__2024-07-18T08:00:59.817398+00:00, execution_date=20240718T080059, start_date=20240718T080102, end_date=20240718T080103
+[2024-07-18T08:01:03.068+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-18T08:01:03.096+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-18T08:01:03.097+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
