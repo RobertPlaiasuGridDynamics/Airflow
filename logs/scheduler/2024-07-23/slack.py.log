@@ -1307,3 +1307,38 @@
 [2024-07-23T08:43:03.700+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:03.699+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-07-23T08:43:03.708+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:03.708+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
 [2024-07-23T08:43:03.722+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.058 seconds
+[2024-07-23T08:43:34.263+0000] {processor.py:161} INFO - Started process (PID=3754) to work on /opt/airflow/dags/slack.py
+[2024-07-23T08:43:34.264+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/slack.py for tasks to queue
+[2024-07-23T08:43:34.265+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:34.265+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/slack.py
+[2024-07-23T08:43:34.282+0000] {processor.py:840} INFO - DAG(s) 'slack_dag' retrieved from /opt/airflow/dags/slack.py
+[2024-07-23T08:43:34.288+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:34.288+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:43:34.296+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:34.296+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
+[2024-07-23T08:43:34.307+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.046 seconds
+[2024-07-23T08:44:04.705+0000] {processor.py:161} INFO - Started process (PID=3819) to work on /opt/airflow/dags/slack.py
+[2024-07-23T08:44:04.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/slack.py for tasks to queue
+[2024-07-23T08:44:04.707+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:04.707+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/slack.py
+[2024-07-23T08:44:04.724+0000] {processor.py:840} INFO - DAG(s) 'slack_dag' retrieved from /opt/airflow/dags/slack.py
+[2024-07-23T08:44:04.731+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:04.731+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:44:04.738+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:04.738+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
+[2024-07-23T08:44:04.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.047 seconds
+[2024-07-23T08:44:35.137+0000] {processor.py:161} INFO - Started process (PID=3884) to work on /opt/airflow/dags/slack.py
+[2024-07-23T08:44:35.138+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/slack.py for tasks to queue
+[2024-07-23T08:44:35.139+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:35.139+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/slack.py
+[2024-07-23T08:44:35.158+0000] {processor.py:840} INFO - DAG(s) 'slack_dag' retrieved from /opt/airflow/dags/slack.py
+[2024-07-23T08:44:35.165+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:35.164+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:44:35.172+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:44:35.171+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
+[2024-07-23T08:44:35.183+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.049 seconds
+[2024-07-23T08:45:05.722+0000] {processor.py:161} INFO - Started process (PID=3949) to work on /opt/airflow/dags/slack.py
+[2024-07-23T08:45:05.723+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/slack.py for tasks to queue
+[2024-07-23T08:45:05.724+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:05.724+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/slack.py
+[2024-07-23T08:45:05.740+0000] {processor.py:840} INFO - DAG(s) 'slack_dag' retrieved from /opt/airflow/dags/slack.py
+[2024-07-23T08:45:05.747+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:05.747+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:45:05.756+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:05.756+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
+[2024-07-23T08:45:05.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.052 seconds
+[2024-07-23T08:45:36.347+0000] {processor.py:161} INFO - Started process (PID=4014) to work on /opt/airflow/dags/slack.py
+[2024-07-23T08:45:36.348+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/slack.py for tasks to queue
+[2024-07-23T08:45:36.352+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:36.351+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/slack.py
+[2024-07-23T08:45:36.383+0000] {processor.py:840} INFO - DAG(s) 'slack_dag' retrieved from /opt/airflow/dags/slack.py
+[2024-07-23T08:45:36.389+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:36.389+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:45:36.405+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:45:36.405+0000] {dag.py:3954} INFO - Setting next_dagrun for slack_dag to None, run_after=None
+[2024-07-23T08:45:36.423+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/slack.py took 0.081 seconds
