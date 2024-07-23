@@ -104,6 +104,10 @@ services:
       retries: 5
       start_period: 5s
     restart: always
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
 
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
@@ -305,16 +309,17 @@ services:
 
   # Spark with N workers
   spark-master:
-    image: bitnami/spark:3.2.1
+    image: bitnami/spark:3.5.1
     #user: root # Run container as root container: https://docs.bitnami.com/tutorials/work-with-non-root-containers/
     hostname: spark
-    platform: linux/amd64
+    platform: linux/arm64
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
+      - DATA_FOLDER=$CONTAINER_PATH/data
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}/data:$CONTAINER_PATH/data
       - ${AIRFLOW_PROJ_DIR:-.}/spark:$CONTAINER_PATH/spark
@@ -323,20 +328,34 @@ services:
       - "7077:7077"
     expose:
       - 9090
+      - 7077
 
   spark-worker:
-    image: bitnami/spark:3.2.1
-    platform: linux/amd64
+    image: bitnami/spark:3.5.1
+    platform: linux/arm64
     #user: root
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
-      - SPARK_WORKER_MEMORY=1G
-      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
+      - DATA_FOLDER=$CONTAINER_PATH/data
     volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/data:$CONTAINER_PATH/data
+      - ${AIRFLOW_PROJ_DIR:-.}/spark:$CONTAINER_PATH/spark
+    depends_on:
+      - spark-master
+
+  jupyter-spark:
+    image: jupyter/pyspark-notebook:spark-3.1.2
+    ports:
+      - "8888:8888"
+      - "4040-4080:4040-4080"
+    volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/notebooks:$CONTAINER_PATH/notebooks
       - ${AIRFLOW_PROJ_DIR:-.}/data:$CONTAINER_PATH/data
       - ${AIRFLOW_PROJ_DIR:-.}/spark:$CONTAINER_PATH/spark

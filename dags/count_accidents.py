@@ -1,26 +1,28 @@
 import datetime
 import os
 
-from airflow.decorators import dag, task
+from airflow import DAG
 from airflow.models import Variable
 from pyspark import SparkContext
 from pyspark.sql import SparkSession
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 
-path = os.getenv('DATA_FOLDER') + Variable.get('csv_monroe')
+path = Variable.get('container_path')
 
 
-@dag(start_date=datetime.datetime(2024, 1, 1), schedule=None, dag_id="count_accidents")
-def count_accidents():
-    @task.pyspark(task_id="count_accidents_spark")
-    def count_accidents_spark(spark: SparkSession, sc: SparkContext):
-        df = spark.read.csv(path=path,
-                            sep=",",
-                            header=True,
-                            inferSchema=True)
-        rows = df.count()
-        print("Numer of rows" + rows)
-    count_accidents_spark()
+with DAG(
+        dag_id="count_accidents",
+        start_date=datetime.datetime(2024,1,1),
+        schedule=None
+) as dag:
+    task1 = SparkSubmitOperator(
+        task_id="spark_count_number_of_accidents",
+        application=path + "/spark/count_rows.py",
+        conn_id="spark",
+        dag=dag
+    )
 
-count_accidents()
+
+    task1
+
 
