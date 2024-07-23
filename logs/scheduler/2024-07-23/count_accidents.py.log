@@ -1300,3 +1300,10 @@
 [2024-07-23T08:42:33.118+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:42:33.117+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-07-23T08:42:33.125+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:42:33.125+0000] {dag.py:3954} INFO - Setting next_dagrun for count_accidents to None, run_after=None
 [2024-07-23T08:42:33.135+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/count_accidents.py took 0.102 seconds
+[2024-07-23T08:43:03.522+0000] {processor.py:161} INFO - Started process (PID=3686) to work on /opt/airflow/dags/count_accidents.py
+[2024-07-23T08:43:03.523+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/count_accidents.py for tasks to queue
+[2024-07-23T08:43:03.526+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:03.525+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/count_accidents.py
+[2024-07-23T08:43:03.607+0000] {processor.py:840} INFO - DAG(s) 'count_accidents' retrieved from /opt/airflow/dags/count_accidents.py
+[2024-07-23T08:43:03.617+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:03.617+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-23T08:43:03.629+0000] {logging_mixin.py:188} INFO - [2024-07-23T08:43:03.629+0000] {dag.py:3954} INFO - Setting next_dagrun for count_accidents to None, run_after=None
+[2024-07-23T08:43:03.647+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/count_accidents.py took 0.131 seconds
